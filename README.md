@@ -1,5 +1,5 @@
 <h3 align="center">
-    <img alt="Logo" title="#logo" width="300px" src="/lib/assets/imc.gif">
+    <!-- <img alt="Logo" title="#logo" width="300px" src="/lib/assets/imc.gif"> -->
     <br><br>
     <b>Calculadora IMC</b>  
     <br>
@@ -12,7 +12,7 @@
 </p>
 
 <!-- Resultado -->
-<img src="/assets/imgs/project-screenshot.png" alt="Imagem de Projeto">
+<img src="lib/assets/imc.gif" alt="Imagem de Projeto">
 
 
 <a id="about"></a>

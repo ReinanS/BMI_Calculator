@@ -19,6 +19,8 @@ class _HomeState extends State<Home> {
   TextEditingController _heightController = TextEditingController();
   String _result;
 
+  List<bool> _selections = [false, false];
+
   @override
   void initState() {
     super.initState();
@@ -58,6 +60,26 @@ class _HomeState extends State<Home> {
           },
         )
       ],
+    );
+  }
+
+  ToggleButtons buildToggleButtons() {
+    return ToggleButtons(
+      children: <Widget>[
+        Text('Man'),
+        Text('Woman'),
+      ],
+      isSelected: _selections,
+      onPressed: (int index) {
+        setState(() {
+          for (int indexBtn = 0; indexBtn < _selections.length; indexBtn++) {
+            if (indexBtn == index)
+              _selections[indexBtn] = true;
+            else
+              _selections[indexBtn] = false;
+          }
+        });
+      },
     );
   }
 
@@ -131,6 +153,7 @@ class _HomeState extends State<Home> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
+          buildToggleButtons(),
           buildTextFormField(
               label: "Peso (kg)",
               error: "Insira seu Peso!",

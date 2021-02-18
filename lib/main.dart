@@ -19,7 +19,7 @@ class _HomeState extends State<Home> {
   TextEditingController _heightController = TextEditingController();
   String _result;
 
-  List<bool> _selections = [false, false];
+  List<bool> _selections;
 
   @override
   void initState() {
@@ -30,6 +30,7 @@ class _HomeState extends State<Home> {
   void resetFields() {
     _weightController.text = '';
     _heightController.text = '';
+    _selections = [false, false];
 
     setState(() {
       _result = 'Informe seus dados';
@@ -63,23 +64,32 @@ class _HomeState extends State<Home> {
     );
   }
 
-  ToggleButtons buildToggleButtons() {
-    return ToggleButtons(
-      children: <Widget>[
-        Text('Man'),
-        Text('Woman'),
-      ],
-      isSelected: _selections,
-      onPressed: (int index) {
-        setState(() {
-          for (int indexBtn = 0; indexBtn < _selections.length; indexBtn++) {
-            if (indexBtn == index)
-              _selections[indexBtn] = true;
-            else
-              _selections[indexBtn] = false;
-          }
-        });
-      },
+  Padding buildToggleButtons() {
+    return Padding(
+      padding: const EdgeInsets.only(left: 20),
+      child: ToggleButtons(
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Text('Man'),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Text('Woman'),
+          ),
+        ],
+        isSelected: _selections,
+        onPressed: (int index) {
+          setState(() {
+            for (int indexBtn = 0; indexBtn < _selections.length; indexBtn++) {
+              if (indexBtn == index)
+                _selections[indexBtn] = true;
+              else
+                _selections[indexBtn] = false;
+            }
+          });
+        },
+      ),
     );
   }
 
@@ -147,13 +157,28 @@ class _HomeState extends State<Home> {
     );
   }
 
+  Text buildLabel(String text) {
+    return Text(
+      '$text: ',
+      style: TextStyle(
+        fontSize: 16.0,
+        color: Colors.grey[600],
+      ),
+    );
+  }
+
   Form buildForm() {
     return Form(
       key: _formKey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          buildToggleButtons(),
+          Row(
+            children: [
+              buildLabel('Sexo'),
+              buildToggleButtons(),
+            ],
+          ),
           buildTextFormField(
               label: "Peso (kg)",
               error: "Insira seu Peso!",

@@ -1,8 +1,13 @@
+import 'package:calculadora_imc/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(
       MaterialApp(
-        home: Home(),
+        theme: ThemeData.dark().copyWith(
+          primaryColor: Color(0xFF0A0E21),
+          scaffoldBackgroundColor: Color(0xFF0A0E21),
+        ),
+        home: HomePage(),
         debugShowCheckedModeBanner: false,
       ),
     );
@@ -80,6 +85,8 @@ class _HomeState extends State<Home> {
         ],
         isSelected: _selections,
         onPressed: (int index) {
+          if (index == 0) {}
+
           setState(() {
             for (int indexBtn = 0; indexBtn < _selections.length; indexBtn++) {
               if (indexBtn == index)

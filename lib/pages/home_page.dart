@@ -44,7 +44,23 @@ class _HomePageState extends State<HomePage> {
                       label: 'Masculino',
                     ),
                   ),
-                )
+                ),
+                Expanded(
+                  child: ReusableCard(
+                    onPress: () {
+                      setState(() {
+                        selectedGender = Gender.female;
+                      });
+                    },
+                    colour: selectedGender == Gender.female
+                        ? kActiveCardColor
+                        : kInActiveCardColor,
+                    cardChild: IconContent(
+                      icon: FontAwesomeIcons.venus,
+                      label: 'Feminino',
+                    ),
+                  ),
+                ),
               ],
             ),
           )

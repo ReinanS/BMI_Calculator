@@ -4,6 +4,7 @@ import 'package:calculadora_imc/components/icon_content.dart';
 import 'package:calculadora_imc/components/reusable_card.dart';
 import 'package:calculadora_imc/components/round_icon_button.dart';
 import 'package:calculadora_imc/constants.dart';
+import 'package:calculadora_imc/pages/result_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -206,6 +207,19 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
+          BottomButton(
+              text: 'Resultado',
+              onPress: () {
+                Calculation calc = Calculation(weight: weight, height: height);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => ResultPage(
+                              bmi: calc.calculateBMI(),
+                              result: calc.result(),
+                              interpretation: calc.interpretation(),
+                            )));
+              })
         ],
       ),
     );

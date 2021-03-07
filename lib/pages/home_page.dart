@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
                         : kInActiveCardColor,
                     cardChild: IconContent(
                       icon: FontAwesomeIcons.mars,
-                      label: 'Masculino',
+                      label: 'MASCULINO',
                     ),
                   ),
                 ),
@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                         : kInActiveCardColor,
                     cardChild: IconContent(
                       icon: FontAwesomeIcons.venus,
-                      label: 'Feminino',
+                      label: 'FEMININO',
                     ),
                   ),
                 ),

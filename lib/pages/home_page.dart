@@ -13,7 +13,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   Gender selectedGender;
-  int height = 70;
+  int height = 170;
   int weight = 65;
   int age = 20;
 
@@ -63,7 +63,56 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
-          )
+          ),
+          Expanded(
+            child: ReusableCard(
+              colour: kActiveCardColor,
+              cardChild: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text(
+                    'ALTURA',
+                    style: kLabelTextStyle,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: <Widget>[
+                      Text(
+                        height.toString(),
+                        style: kNumberStyle,
+                      ),
+                      Text(
+                        'CM',
+                        style: kLabelTextStyle,
+                      )
+                    ],
+                  ),
+                  SliderTheme(
+                    data: SliderTheme.of(context).copyWith(
+                        activeTrackColor: Colors.white,
+                        inactiveTickMarkColor: Color(0xff8d8e98),
+                        thumbColor: Color(0xffeb1555),
+                        overlayColor: Color(0x30eb1555),
+                        thumbShape:
+                            RoundSliderThumbShape(enabledThumbRadius: 15),
+                        overlayShape:
+                            RoundSliderOverlayShape(overlayRadius: 30)),
+                    child: Slider(
+                        value: height.toDouble(),
+                        min: 90,
+                        max: 230,
+                        onChanged: (double newValue) {
+                          setState(() {
+                            height = newValue.round();
+                          });
+                        }),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );

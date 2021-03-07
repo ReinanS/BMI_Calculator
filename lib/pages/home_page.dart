@@ -1,3 +1,5 @@
+import 'package:calculadora_imc/components/bottombm_button.dart';
+import 'package:calculadora_imc/components/calculation.dart';
 import 'package:calculadora_imc/components/icon_content.dart';
 import 'package:calculadora_imc/components/reusable_card.dart';
 import 'package:calculadora_imc/components/round_icon_button.dart';
@@ -158,10 +160,52 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
+                ),
+                Expanded(
+                  child: ReusableCard(
+                    colour: kActiveCardColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          'Idade',
+                          style: kLabelTextStyle,
+                        ),
+                        Text(
+                          age.toString(),
+                          style: kNumberStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.minus,
+                              onPress: () {
+                                setState(() {
+                                  age--;
+                                });
+                              },
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.plus,
+                              onPress: () {
+                                setState(() {
+                                  age++;
+                                });
+                              },
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
                 )
               ],
             ),
-          )
+          ),
         ],
       ),
     );

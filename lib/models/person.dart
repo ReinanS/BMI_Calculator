@@ -1,8 +1,11 @@
+import 'dart:math';
+
 class Person {
   String _nome;
   double _height;
   double _weight;
   Gender _gender;
+  double _bmi;
 
   Person(this._height, this._weight, this._gender);
 
@@ -36,6 +39,11 @@ class Person {
 
   set gender(Gender gender) {
     this._gender = gender;
+  }
+
+  String calculateBMI() {
+    _bmi = _weight / pow(_height / 100, 2);
+    return _bmi.toStringAsFixed(2);
   }
 }
 

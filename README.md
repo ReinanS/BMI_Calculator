@@ -36,12 +36,12 @@
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
 - [x] Código Base - Cálculo Simples.
-- [x] Alterar Layout - Design contruído pelo [Ruben Vaalt](https://dribbble.com/shots/4585382-Simple-BMI-Calculator).
+- [x] Alterar Layout - Design desenvolvido pelo [Ruben Vaalt](https://dribbble.com/shots/4585382-Simple-BMI-Calculator).
 - [X] Adicionar botões (Toggle ou Radio button) para escolha de gênero ([masculino](https://indicedemassacorporal.com/movel/calculo-imc-masculino.html) / [feminino](https://indicedemassacorporal.com/movel/calculo-imc-feminino.html)).
 - [ ] Corrigir o calculo de acordo com o gênero (masculino e feminino).
 - [ ] Criar um classe Pessoa com os atributos (peso, altura e gênero), criar métodos para calcular IMC e classificar.
 - [ ] Refatorar o código do aplicativo para utilizar a classe Pessoa.
-- [] Aplicar uma escala de cores para o resultado da classificação do IMC.
+- [ ] Aplicar uma escala de cores para o resultado da classificação do IMC.
 - [ ] Aumentar o texto do resultado do IMC (número) e também colocar em negrito
 
 <a id="technologies-used"></a>

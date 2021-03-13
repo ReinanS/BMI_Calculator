@@ -1,50 +1,114 @@
 import 'dart:math';
 
 class Person {
-  String _nome;
+  Person(
+    this._height,
+    this._weight,
+    this._gender,
+    this._age,
+  );
+
   double _height;
   double _weight;
-  Gender _gender;
+  String _gender;
+  int _age;
   double _bmi;
-
-  Person(this._height, this._weight, this._gender);
-
-  String get nome {
-    return _nome;
-  }
-
-  set nome(String nome) {
-    this._nome = nome;
-  }
-
-  double get height {
-    return _height;
-  }
-
-  set height(double height) {
-    this._height = height;
-  }
-
-  double get weight {
-    return _weight;
-  }
-
-  set weight(double weight) {
-    this._weight = weight;
-  }
-
-  Gender get gender {
-    return _gender;
-  }
-
-  set gender(Gender gender) {
-    this._gender = gender;
-  }
 
   String calculateBMI() {
     _bmi = _weight / pow(_height / 100, 2);
     return _bmi.toStringAsFixed(2);
   }
-}
 
-enum Gender { male, female }
+  String result() {
+    if (_lowWeight())
+      return 'Abaixo do Peso';
+    else if (_idealWeight())
+      return 'Peso Ideal';
+    else if (_littleOverweight())
+      return 'Pouco acima do Peso';
+    else if (_overweight())
+      return 'Acima do Peso';
+    else
+      return 'Obesidade';
+  }
+
+  String interpretation() {
+    if (_lowWeight())
+      return 'Você tem um peso corporal menor que o normal. Você pode comer um pouco mais.';
+    else if (_idealWeight())
+      return 'Você tem um peso corporal normal. Bom trabalho.';
+    else if (_littleOverweight())
+      return 'Você tem um peso corporal um pouco acima do Peso. Tome cuidado';
+    else if (_overweight())
+      return 'Você tem um peso corporal maior que o normal. Tente se exercitar mais.';
+    else
+      return 'Você tem um peso corporal obeso. Consulte seu médico.';
+  }
+
+  bool _isYoung() {
+    return _age < 19;
+  }
+
+  bool _isMale() {
+    return _gender == "male";
+  }
+
+  bool _isFemale() {
+    return _gender == "female";
+  }
+
+  bool _lowWeight() {
+    if (_isYoung() && _bmi < 18.5)
+      return true;
+    else if (_isMale() && _bmi < 20.7)
+      return true;
+    else if (_isFemale() && _bmi < 19.1)
+      return true;
+    else
+      return false;
+  }
+
+  bool _idealWeight() {
+    if (_isYoung() && (_bmi >= 18.5) && (_bmi < 25))
+      return true;
+    else if (_isMale() && (_bmi >= 20.7) && (_bmi < 26.5))
+      return true;
+    else if (_isFemale() && (_bmi >= 19.1) && (_bmi < 25.9))
+      return true;
+    else
+      return false;
+  }
+
+  bool _littleOverweight() {
+    if (_isYoung() && (_bmi >= 25) && (_bmi < 30))
+      return true;
+    else if (_isMale() && (_bmi >= 26.5) && (_bmi < 28))
+      return true;
+    else if (_isFemale() && (_bmi >= 25.9) && (_bmi < 27.4))
+      return true;
+    else
+      return false;
+  }
+
+  bool _overweight() {
+    if (_isYoung() && (_bmi >= 30) && (_bmi < 40))
+      return true;
+    else if (_isMale() && (_bmi >= 28) && (_bmi < 31.2))
+      return true;
+    else if (_isFemale() && (_bmi >= 27.4) && (_bmi < 32.4))
+      return true;
+    else
+      return false;
+  }
+
+  bool _obese() {
+    if (_isYoung() && (_bmi >= 40.0))
+      return true;
+    else if (_isMale() && (_bmi >= 31.2))
+      return true;
+    else if (_isFemale() && (_bmi >= 32.4))
+      return true;
+    else
+      return false;
+  }
+}

@@ -19,9 +19,7 @@
 
 ## Sobre
 
-
-<strong>Calculadora IMC</strong> aplicação mobile contruída em [Flutter](https://www.flutter.dev/), com o auxílio do [tutorial do professor Kleber Andrade](https://medium.com/flutter-comunidade-br/desenvolvendo-meu-primeiro-aplicativo-com-flutter-918a15e73a01) para a construção do código base.
-
+<strong>Calculadora IMC</strong> aplicação mobile contruída em [Flutter](https://www.flutter.dev/), cocom inspiração do [tutorial do professor Kleber Andrade](https://medium.com/flutter-comunidade-br/desenvolvendo-meu-primeiro-aplicativo-com-flutter-918a15e73a01) para a construção do do projeto e das features.
 
 <P>
     O IMC (Índice de Massa Corporal) é o resultado obtido por meio de uma fórmula matemática, e foi desenvolvido para indicar parâmetros que possam ser usados para avaliar riscos de obesidade a partir de medidas corporais. O cálculo é feito dividindo o peso (em quilogramas) pela altura (em metros) ao quadrado.
@@ -38,8 +36,8 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Código Base - Cálculo Simples.
 - [x] Alterar Layout - Design desenvolvido pelo [Ruben Vaalt](https://dribbble.com/shots/4585382-Simple-BMI-Calculator).
 - [X] Adicionar botões (Toggle ou Radio button) para escolha de gênero ([masculino](https://indicedemassacorporal.com/movel/calculo-imc-masculino.html) / [feminino](https://indicedemassacorporal.com/movel/calculo-imc-feminino.html)).
-- [ ] Corrigir o calculo de acordo com o gênero (masculino e feminino).
-- [ ] Criar um classe Pessoa com os atributos (peso, altura e gênero), criar métodos para calcular IMC e classificar.
+- [x] Corrigir o calculo de acordo com o gênero (masculino e feminino).
+- [x] Criar um classe Pessoa com os atributos (peso, altura e gênero), criar métodos para calcular IMC e classificar.
 - [ ] Refatorar o código do aplicativo para utilizar a classe Pessoa.
 - [ ] Aplicar uma escala de cores para o resultado da classificação do IMC.
 - [ ] Aumentar o texto do resultado do IMC (número) e também colocar em negrito

@@ -39,8 +39,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Corrigir o calculo de acordo com o gênero (masculino e feminino).
 - [x] Criar um classe Pessoa com os atributos (peso, altura e gênero), criar métodos para calcular IMC e classificar.
 - [x] Refatorar o código do aplicativo para utilizar a classe Pessoa.
-- [ ] Aplicar uma escala de cores para o resultado da classificação do IMC.
-- [ ] Aumentar o texto do resultado do IMC (número) e também colocar em negrito
+- [x] Aplicar uma escala de cores para o resultado da classificação do IMC.
 
 <a id="technologies-used"></a>
 

@@ -1,14 +1,13 @@
 import 'package:calculadora_imc/components/bottombm_button.dart';
-import 'package:calculadora_imc/components/calculation.dart';
+import 'package:calculadora_imc/models/calculation.dart';
 import 'package:calculadora_imc/components/icon_content.dart';
 import 'package:calculadora_imc/components/reusable_card.dart';
 import 'package:calculadora_imc/components/round_icon_button.dart';
 import 'package:calculadora_imc/constants.dart';
+import 'package:calculadora_imc/models/person.dart';
 import 'package:calculadora_imc/pages/result_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-enum Gender { male, female }
 
 class HomePage extends StatefulWidget {
   @override
@@ -16,11 +15,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Gender selectedGender;
-  int height = 170;
-  int weight = 65;
-  int age = 20;
+  // Gender selectedGender;
+  // int height = 170;
+  // int weight = 65;
+  // int age = 20;
 
+  Person person = Person(height: 170, weight: 65, age: 20, gender: Gender.male);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,10 +37,10 @@ class _HomePageState extends State<HomePage> {
                   child: ReusableCard(
                     onPress: () {
                       setState(() {
-                        selectedGender = Gender.male;
+                        person.gender = Gender.male;
                       });
                     },
-                    colour: selectedGender == Gender.male
+                    colour: person.gender == Gender.male
                         ? kActiveCardColor
                         : kInActiveCardColor,
                     cardChild: IconContent(
@@ -53,10 +53,10 @@ class _HomePageState extends State<HomePage> {
                   child: ReusableCard(
                     onPress: () {
                       setState(() {
-                        selectedGender = Gender.female;
+                        person.gender = Gender.female;
                       });
                     },
-                    colour: selectedGender == Gender.female
+                    colour: person.gender == Gender.female
                         ? kActiveCardColor
                         : kInActiveCardColor,
                     cardChild: IconContent(
@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                     textBaseline: TextBaseline.alphabetic,
                     children: <Widget>[
                       Text(
-                        height.toString(),
+                        person.height.toString(),
                         style: kNumberStyle,
                       ),
                       Text(
@@ -104,12 +104,12 @@ class _HomePageState extends State<HomePage> {
                         overlayShape:
                             RoundSliderOverlayShape(overlayRadius: 30)),
                     child: Slider(
-                        value: height.toDouble(),
+                        value: person.height.toDouble(),
                         min: 90,
                         max: 230,
                         onChanged: (double newValue) {
                           setState(() {
-                            height = newValue.round();
+                            person.height = newValue.round().toDouble();
                           });
                         }),
                   ),
@@ -131,7 +131,7 @@ class _HomePageState extends State<HomePage> {
                           style: kLabelTextStyle,
                         ),
                         Text(
-                          weight.toString(),
+                          person.weight.toString(),
                           style: kNumberStyle,
                         ),
                         Row(
@@ -141,7 +141,7 @@ class _HomePageState extends State<HomePage> {
                               icon: FontAwesomeIcons.minus,
                               onPress: () {
                                 setState(() {
-                                  weight--;
+                                  person.weight--;
                                 });
                               },
                             ),
@@ -152,7 +152,7 @@ class _HomePageState extends State<HomePage> {
                               icon: FontAwesomeIcons.plus,
                               onPress: () {
                                 setState(() {
-                                  weight++;
+                                  person.weight++;
                                 });
                               },
                             ),
@@ -173,7 +173,7 @@ class _HomePageState extends State<HomePage> {
                           style: kLabelTextStyle,
                         ),
                         Text(
-                          age.toString(),
+                          person.age.toString(),
                           style: kNumberStyle,
                         ),
                         Row(
@@ -183,7 +183,7 @@ class _HomePageState extends State<HomePage> {
                               icon: FontAwesomeIcons.minus,
                               onPress: () {
                                 setState(() {
-                                  age--;
+                                  person.age--;
                                 });
                               },
                             ),
@@ -194,7 +194,7 @@ class _HomePageState extends State<HomePage> {
                               icon: FontAwesomeIcons.plus,
                               onPress: () {
                                 setState(() {
-                                  age++;
+                                  person.age++;
                                 });
                               },
                             )
@@ -210,7 +210,12 @@ class _HomePageState extends State<HomePage> {
           BottomButton(
               text: 'Resultado',
               onPress: () {
-                Calculation calc = Calculation(weight: weight, height: height);
+                Calculation calc = Calculation(
+                  weight: person.weight,
+                  height: person.height,
+                  age: person.age,
+                  gender: person.gender,
+                );
                 Navigator.push(
                     context,
                     MaterialPageRoute(

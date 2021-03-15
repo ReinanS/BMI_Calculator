@@ -223,6 +223,9 @@ class _HomePageState extends State<HomePage> {
                               bmi: calc.calculateBMI(),
                               result: calc.result(),
                               interpretation: calc.interpretation(),
+                              textResult: calc.idealWeight() == true
+                                  ? kLabelGreen
+                                  : kLabelRed,
                             )));
               })
         ],

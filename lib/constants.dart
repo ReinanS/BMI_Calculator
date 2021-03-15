@@ -19,3 +19,13 @@ const kLargeButtonStyle = TextStyle(
   fontSize: 20,
   fontWeight: FontWeight.bold,
 );
+
+const kLabelGreen = TextStyle(
+  fontSize: 30,
+  color: Colors.green,
+);
+
+const kLabelRed = TextStyle(
+  fontSize: 30,
+  color: Colors.red,
+);

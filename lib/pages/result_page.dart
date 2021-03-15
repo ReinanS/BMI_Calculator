@@ -4,11 +4,12 @@ import 'package:calculadora_imc/constants.dart';
 import 'package:flutter/material.dart';
 
 class ResultPage extends StatelessWidget {
-  ResultPage({this.bmi, this.result, this.interpretation});
+  ResultPage({this.bmi, this.result, this.interpretation, this.textResult});
 
   final String bmi;
   final String result;
   final String interpretation;
+  final TextStyle textResult;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class ResultPage extends StatelessWidget {
                   Text(
                     result,
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.green, fontSize: 30),
+                    style: textResult,
                   ),
                   Text(
                     bmi,

@@ -19,7 +19,7 @@ class Calculation {
   String result() {
     if (_lowWeight())
       return 'Abaixo do Peso';
-    else if (_idealWeight())
+    else if (idealWeight())
       return 'Peso Ideal';
     else if (_littleOverweight())
       return 'Pouco acima do Peso';
@@ -32,7 +32,7 @@ class Calculation {
   String interpretation() {
     if (_lowWeight())
       return 'Você tem um peso corporal menor que o normal. Você pode comer um pouco mais.';
-    else if (_idealWeight())
+    else if (idealWeight())
       return 'Você tem um peso corporal normal. Bom trabalho.';
     else if (_littleOverweight())
       return 'Você tem um peso corporal um pouco acima do Peso. Tome cuidado';
@@ -65,7 +65,7 @@ class Calculation {
       return false;
   }
 
-  bool _idealWeight() {
+  bool idealWeight() {
     if (_isYoung() && (_bmi >= 18.5) && (_bmi < 25))
       return true;
     else if (_isMale() && (_bmi >= 20.7) && (_bmi < 26.5))

@@ -19,7 +19,7 @@
 
 ## Sobre
 
-<strong>Calculadora IMC</strong> aplicação mobile contruída em [Flutter](https://www.flutter.dev/), com inspiração do [tutorial do professor Kleber Andrade](https://medium.com/flutter-comunidade-br/desenvolvendo-meu-primeiro-aplicativo-com-flutter-918a15e73a01) para a construção do início do projeto.
+<strong>Calculadora IMC</strong>, aplicação mobile construída em [Flutter](https://www.flutter.dev/), com auxílio do [tutorial do professor Kleber Andrade](https://medium.com/flutter-comunidade-br/desenvolvendo-meu-primeiro-aplicativo-com-flutter-918a15e73a01) para a construção do início do projeto.
 <P>
     O IMC (Índice de Massa Corporal) é o resultado obtido por meio de uma fórmula matemática, e foi desenvolvido para indicar parâmetros que possam ser usados para avaliar riscos de obesidade a partir de medidas corporais. O cálculo é feito dividindo o peso (em quilogramas) pela altura (em metros) ao quadrado.
     Essa fórmula foi desenvolvida ainda no século XVIII pelo belga Adolphe Quételet, cientista de matemática e astronomia que tinha enorme paixão por estatística. Essa fórmula foi reavaliada na década de 1972 pelo americano Ancel Keys, e somente reconhecida no ano de 1980 como um padrão internacional de referência para medidas de obesidade pela Organização Mundial de Saúde.
